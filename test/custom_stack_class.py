@@ -1,8 +1,13 @@
 class StackEmptyException(Exception):
-    pass
+    def __init__(self, msg="Stack está vazio."):
+        self.msg = msg
+        super().__init__(self.msg)
+
 
 class StackFullException(Exception):
-    pass
+    def __init__(self, msg="Stack está cheio."):
+        self.msg = msg
+        super().__init__(self.msg)
 
 class CustomStack:
     def __init__(self, pLimit):
@@ -31,3 +36,16 @@ class CustomStack:
         if self.isEmpty():
             raise StackEmptyException
         return self.elements[-1]
+
+
+class NumberAscOrder:
+    @staticmethod
+    def sort(stack):
+        if stack.isEmpty():
+            return []
+        else:
+            sorted_numbers = []
+            while not stack.isEmpty():
+                sorted_numbers.append(stack.pop())
+            sorted_numbers.sort()
+            return sorted_numbers

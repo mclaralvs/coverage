@@ -1,5 +1,5 @@
 import pytest
-from custom_stack_class import CustomStack, StackEmptyException, StackFullException
+from custom_stack_class import CustomStack, StackEmptyException, StackFullException, NumberAscOrder
 
 def test_empty_stack():
     stack = CustomStack(5)
